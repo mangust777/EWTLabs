@@ -1,25 +1,37 @@
 html {
-    font-family: sans-serif;
-  }
+  font-family: sans-serif;
+}
 
-  body {
-    margin: 0;
-  }
+body {
+  margin: 0;
+}
 
-  header {
-    background: rgb(52, 206, 142);
-    height: 100px;
-  }
+header {
+  background: rgb(52, 206, 142);
+  height: 100px;
+}
 
-  h1 {
-    text-align: center;
-    color: white;
-    line-height: 100px;
-    margin: 0;
-  }
+h1 {
+  text-align: center;
+  color: white;
+  line-height: 100px;
+  margin: 0;
+}
 
-  article {
-    padding: 10px;
-    margin: 10px;
-    background: rgba(16, 233, 215, 0.178);
-  }
+/* Container for articles: use flex + wrap */
+.articles-wrapper {
+  display: flex;         /* activate Flexbox */
+  flex-wrap: wrap;       /* allow items to wrap onto multiple rows */
+  justify-content: space-between; /* distribute space between items (optional) */
+  margin: 0 10px;        /* optional horizontal margin */
+}
+
+/* Individual article styling (already given, plus minor tweaks) */
+article {
+  padding: 10px;
+  margin: 10px 0;                     /* top/bottom margin, so they stack nicely in rows */
+  background: rgba(16, 233, 215, 0.178);
+  flex: 0 0 calc(10% - 20px);         /* 10 items per row if screen is wide enough */
+  box-sizing: border-box;             /* ensures padding/margins work as expected */
+}
+
