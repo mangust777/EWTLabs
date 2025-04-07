@@ -18,20 +18,56 @@ h1 {
   margin: 0;
 }
 
-/* Container for articles: use flex + wrap */
-.articles-wrapper {
-  display: flex;         /* activate Flexbox */
-  flex-wrap: wrap;       /* allow items to wrap onto multiple rows */
-  justify-content: space-between; /* distribute space between items (optional) */
-  margin: 0 10px;        /* optional horizontal margin */
+/* ---------- Row 1 styling (Articles 1,2,3) ---------- */
+.row1 {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 5px;
 }
 
-/* Individual article styling (already given, plus minor tweaks) */
-article {
-  padding: 10px;
-  margin: 10px 0;                     /* top/bottom margin, so they stack nicely in rows */
+.row1 article {
   background: rgba(16, 233, 215, 0.178);
-  flex: 0 0 calc(10% - 20px);         /* 10 items per row if screen is wide enough */
-  box-sizing: border-box;             /* ensures padding/margins work as expected */
+  padding: 10px;
+  box-sizing: border-box;
+  flex: 0 0 calc(33.333% - 10px);
 }
+
+/* ---------- Row 2 container: Two columns ---------- */
+.row2 {
+  display: flex;
+  margin: 10px;
+}
+
+/* In the HTML, .right-col comes first; use order to swap */
+.right-col {
+  order: 2;
+  display: flex;
+  flex-direction: column-reverse; /* reverse the order of articles 4,5,6 */
+  flex: 0 0 calc(33.333% - 10px);  
+  gap: 10px;
+}
+
+.left-col {
+  order: 1;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  gap: 10px;
+}
+
+/* Right column articles (will appear as 6,5,4) */
+.right-col article {
+  background: rgba(16, 233, 215, 0.178);
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Left column articles arranged in 2 rows of 2 */
+.left-col article {
+  background: rgba(16, 233, 215, 0.178);
+  padding: 10px;
+  box-sizing: border-box;
+  flex: 0 0 calc(50% - 10px);
+}
+
 
