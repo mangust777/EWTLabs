@@ -1,13 +1,19 @@
+/* 1. Global background color for entire screen (not white) */
 body {
+    background-color: #e0f7fa; /* light cyan */
+    margin: 0;
+    padding: 20px;
     font-family: Arial, sans-serif;
-    margin: 20px;
-    padding: 0;
 }
-
-h1 {
-    color: darkblue;
+  
+/* 2. Center all content and set maximum width to 1440px */
+body > * {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
 }
-
+  
+/* 4. Remove list markers and style anchor links in "Мои любимые фильмы" */
 ul {
     list-style-type: none;
     padding-left: 0;
@@ -19,13 +25,55 @@ ul li {
 
 ul li a {
     text-decoration: none;
-    color: darkred;
+    color: black;
 }
 
 ul li a:hover {
     text-decoration: underline;
 }
+  
+/* 3. Load local fonts */
+@font-face {
+    font-family: 'Oswald';
+    src: url('Oswald/static/Oswald-Regular.ttf');
+}
+@font-face {
+    font-family: 'Pacifico';
+    src: url('Pacifico/Pacifico-Regular.ttf');
+}
+@font-face {
+    font-family: 'Underdog';
+    src: url('Underdog/Underdog-Regular.ttf');
+}
+  
+/* 3. Apply a different font to each movie section */
+.movie#lord-of-the-rings {
+    font-family: 'Oswald', sans-serif;
+}
 
+.movie#matrix {
+    font-family: 'Pacifico', sans-serif;
+}
+
+.movie#inception {
+    font-family: 'Underdog', sans-serif;
+}
+  
+/* 5. Align the description text for each movie differently */
+/* Assuming the description is the second <p> element inside each section */
+.movie#lord-of-the-rings p:nth-of-type(2) {
+    text-align: center;
+}
+
+.movie#matrix p:nth-of-type(2) {
+    text-align: right;
+}
+
+.movie#inception p:nth-of-type(2) {
+    text-align: left;
+}
+  
+/* 6. All images should be the same size and 7. have rounded edges */
 .images {
     display: flex;
     gap: 10px;
@@ -33,8 +81,39 @@ ul li a:hover {
 }
 
 .images img {
-    width: 200px;
-    height: auto;
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+  
+/* 8. Bold text styling using different methods */
+/* Bold via CSS property on h3 */
+h3 {
+    color: navy;
+    font-weight: 700;
+}
+
+/* Explicit bold for table headers */
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+  /* Ensure any <b> tags are bold */
+b {
+    font-weight: bold;
+}
+  
+/* Other existing styles */
+h1 {
+    color: darkblue;
+}
+
+h2 {
+    color: darkgreen;
+    margin-top: 50px;
+    text-align: center;
 }
 
 table {
@@ -51,17 +130,4 @@ th, td {
     padding: 10px;
     text-align: left;
 }
-
-th {
-    background-color: #f2f2f2;
-}
-
-h2 {
-    color: darkgreen;
-    margin-top: 50px;
-    text-align: center;
-}
-
-h3 {
-    color: navy;
-}
+  
