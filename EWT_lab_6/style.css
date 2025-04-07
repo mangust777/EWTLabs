@@ -1,6 +1,6 @@
 html {
-    font-family: sans-serif;
-  }
+  font-family: sans-serif;
+}
 
 body {
   margin: 0;
@@ -18,12 +18,104 @@ h1 {
   margin: 0;
 }
 
+/* Button: Vibrate animation and hover behavior */
 button {
   margin: 50px;
   font-size: 20px;
   background-color: red;
+  /* Vibrate continuously */
+  animation: vibrate 0.1s infinite linear;
+  transition: background-color 0.3s;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
+button:hover {
+  /* Stop vibration and change to green */
+  animation-play-state: paused;
+  background-color: green;
+}
+
+/* Keyframes for button vibration */
+@keyframes vibrate {
+  0%   { transform: translateX(0); }
+  25%  { transform: translateX(-2px); }
+  50%  { transform: translateX(2px); }
+  75%  { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
+/* Link styling with underline animation on hover */
 a {
   font-size: 20px;
+  color: black;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
 }
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  height: 2px;
+  width: 0;
+  background-color: green;
+  transition: width 0.3s ease;
+}
+
+a:hover {
+  color: green;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* Ball styling and fall/bounce animation */
+.ball {
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+  border-radius: 50%;
+  position: relative;
+  margin: 50px auto; /* centers the ball horizontally */
+  /* Increased time allocation for bounces to simulate deceleration */
+  animation: ballFall 2s ease forwards;
+}
+
+/* Modified keyframes for a more realistic bounce with slowing after impact */
+@keyframes ballFall {
+  /* Start at the top */
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  /* Fast free-fall impact */
+  30% {
+    transform: translateY(300px) scale(1);
+  }
+  /* Impact: squish the ball for elastic deformation */
+  40% {
+    transform: translateY(315px) scaleY(0.7);
+  }
+  /* First bounce: rebound to about half the fall height, with a stretch */
+  60% {
+    transform: translateY(150px) scaleY(1.2);
+  }
+  /* Return to ground with a slower descent */
+  80% {
+    transform: translateY(310px) scaleY(0.8);
+  }
+  /* Second, smaller bounce: the ball rises less and slower */
+  90% {
+    transform: translateY(225px) scaleY(1.1);
+  }
+  /* End at the ground in a resting state */
+  100% {
+    transform: translateY(300px) scale(1);
+  }
+}
+
