@@ -1,25 +1,103 @@
 html {
-    font-family: sans-serif;
-  }
+  font-family: sans-serif;
+}
 
-  body {
-    margin: 0;
-  }
+body {
+  margin: 0;
+}
 
-  header {
-    background: rgb(52, 206, 142);
-    height: 100px;
-  }
+header {
+  background: rgb(52, 206, 142);
+  height: 100px;
+}
 
-  h1 {
-    text-align: center;
-    color: white;
-    line-height: 100px;
-    margin: 0;
-  }
+h1 {
+  text-align: center;
+  color: white;
+  line-height: 100px;
+  margin: 0;
+}
 
-  article {
-    padding: 10px;
-    margin: 10px;
-    background: rgba(16, 233, 215, 0.178);
+/* Common styling for all articles */
+article {
+  padding: 10px;
+  background: rgba(16, 233, 215, 0.178);
+}
+
+/* =====================================
+   Figure 3 – For screens 699px and less 
+   (Mobile: one column layout)
+   ===================================== */
+.adaptive {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+/* =====================================
+   Figure 2 – For screens from 700px to 1399px 
+   Two columns and six rows:
+      Row 1: Article 1 spans both columns (x 1-2 y 1)
+      Row 2: Article 2 spans both columns (x 1-2 y 2)
+      Row 3: Article 3 spans both columns (x 1-2 y 3)
+      Row 4: Article 4 in col 1, Article 5 in col 2 (x 1 y 4, x 2 y 4)
+      Row 5: Article 6 in col 1, Article 7 in col 2 (x 1 y 5, x 2 y 5)
+      Row 6: Article 8 in col 1, Article 9 in col 2 (x 1 y 6, x 2 y 6)
+   ===================================== */
+@media (min-width: 700px) and (max-width: 1399px) {
+  .adaptive {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* We explicitly define six rows, one per line in our areas */
+    grid-template-rows: repeat(6, auto);
+    grid-template-areas:
+      "a a"
+      "b b"
+      "c c"
+      "d e"
+      "f g"
+      "h i";
+    gap: 10px;
   }
+  /* Assign the area names via :nth-child() */
+  .adaptive article:nth-child(1) { grid-area: a; }
+  .adaptive article:nth-child(2) { grid-area: b; }
+  .adaptive article:nth-child(3) { grid-area: c; }
+  .adaptive article:nth-child(4) { grid-area: d; }
+  .adaptive article:nth-child(5) { grid-area: e; }
+  .adaptive article:nth-child(6) { grid-area: f; }
+  .adaptive article:nth-child(7) { grid-area: g; }
+  .adaptive article:nth-child(8) { grid-area: h; }
+  .adaptive article:nth-child(9) { grid-area: i; }
+}
+
+/* =====================================
+   Figure 1 – For screens 1400px and more 
+   Four columns and four rows:
+      Row 1: Article 1 spans columns 1-2, Article 2 spans columns 3-4
+      Row 2: Article 3 spans all 4 columns (x 1-4 y 2)
+      Row 3: Article 4 spans columns 1-2, Article 5 spans columns 3-4
+      Row 4: Article 6 in col 1, Article 7 in col 2, Article 8 in col 3, Article 9 in col 4
+   ===================================== */
+@media (min-width: 1400px) {
+  .adaptive {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+      "a a b b"
+      "c c c c"
+      "d d e e"
+      "f g h i";
+    gap: 10px;
+  }
+  .adaptive article:nth-child(1) { grid-area: a; }
+  .adaptive article:nth-child(2) { grid-area: b; }
+  .adaptive article:nth-child(3) { grid-area: c; }
+  .adaptive article:nth-child(4) { grid-area: d; }
+  .adaptive article:nth-child(5) { grid-area: e; }
+  .adaptive article:nth-child(6) { grid-area: f; }
+  .adaptive article:nth-child(7) { grid-area: g; }
+  .adaptive article:nth-child(8) { grid-area: h; }
+  .adaptive article:nth-child(9) { grid-area: i; }
+}
