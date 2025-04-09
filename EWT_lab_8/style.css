@@ -1,27 +1,56 @@
 html {
-    font-family: sans-serif;
-  }
+  font-family: sans-serif;
+}
 
-  body {
-    margin: 0;
-  }
+body {
+  margin: 0;
+}
 
-  header {
-    background: rgb(52, 206, 142);
-    height: 100px;
-  }
+header {
+  background: rgb(52, 206, 142);
+  height: 100px;
+}
 
-  h1 {
-    text-align: center;
-    color: white;
-    line-height: 100px;
-    margin: 0;
-  }
+h1 {
+  text-align: center;
+  color: white;
+  line-height: 100px;
+  margin: 0;
+}
 
-  article {
-    padding: 10px;
-    margin: 10px;
-    background: rgba(16, 233, 215, 0.178);
-  }
+/* Define the grid container */
+.grid {
+  display: grid;
+  /* Four equal columns – adjust as needed */
+  grid-template-columns: repeat(4, 1fr);
+  /* Four rows – you can use auto or a fixed height */
+  grid-template-rows: repeat(4, auto);
+  /* Set up the grid-template-areas (each quoted string is one row) */
+  grid-template-areas: 
+    "a b c c"
+    "a d c c"
+    "a e f g"
+    "h i i j";
+  gap: 20px; /* Adjust gap between items as desired */
+  margin: 10px;
+}
 
-  
+/* Now assign each article to its grid-area via nth-child() */
+.grid article:nth-child(1)  { grid-area: a; } /* Article 1: x1, y1–3 */
+.grid article:nth-child(2)  { grid-area: b; } /* Article 2: x2, y1 */
+.grid article:nth-child(3)  { grid-area: c; } /* Article 3: x3–4, y1-2 (spanning two columns and rows) */
+.grid article:nth-child(4)  { grid-area: d; } /* Article 4: x2, y2 */
+.grid article:nth-child(5)  { grid-area: e; } /* Article 5: x2, y3 */
+.grid article:nth-child(6)  { grid-area: f; } /* Article 6: x3, y3 */
+.grid article:nth-child(7)  { grid-area: g; } /* Article 7: x4, y3 */
+.grid article:nth-child(8)  { grid-area: h; } /* Article 8: x1, y4 */
+.grid article:nth-child(9)  { grid-area: i; } /* Article 9: x2–3, y4 */
+.grid article:nth-child(10) { grid-area: j; } /* Article 10: x4, y4 */
+
+/* Give each article some background and padding */
+article {
+  background: rgba(16, 233, 215, 0.18);
+  padding: 10px;
+  /* Remove original margins if desired (grid-gap handles space between items) */
+  margin: 0;
+}
