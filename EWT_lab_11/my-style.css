@@ -1,0 +1,146 @@
+/* ********************************************************** */
+/*                  GLOBAL RESET & BASE                     */
+/* ********************************************************** */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    text-align: center;
+}
+
+/* ********************************************************** */
+/*                      MAIN STYLING                          */
+/* ********************************************************** */
+
+main{
+    margin: 0 10px;
+}
+
+/* ********************************************************** */
+/*              FIXED HEADER & FOOTER STYLING               */
+/* ********************************************************** */
+/* Header is pinned to the top with a warm background */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Footer is pinned to the bottom with a golden hue */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #555;
+    color: #fff;
+    padding: 10px;
+}
+
+/* ********************************************************** */
+/*                WRAPPER & GENERAL LAYOUT                  */
+/* ********************************************************** */
+/* Ensure the wrapper takes full width and avoids header/footer */
+body .wrapper {
+    max-width: 100% !important;
+    text-align: center;
+    margin-top: 60px;   /* Allow room for header */
+    margin-bottom: 60px; /* Allow room for footer */
+}
+
+/* ********************************************************** */
+/*             BLOCKQUOTE & ARTICLE PARAGRAPH               */
+/* ********************************************************** */
+/* Blockquotes inside asides: italic and normal weight */
+aside blockquote.blockquote {
+    font-style: italic;
+    font-weight: normal;
+}
+
+/* Force article paragraphs to render in normal (non‑italic) style */
+article.article p {
+    font-style: normal !important;
+}
+
+/* ********************************************************** */
+/*               "STICKY" WORD BLOCKS SETUP                 */
+/* ********************************************************** */
+/* Each .word element is sticky so it remains visible right beneath the header */
+/* The left offsets are applied below to position them in sequence */
+.word {
+    position: sticky;
+    top: 50px;      /* Stick right after header */
+    width: 100px;   /* Each word block is 100px wide */
+}
+
+/* Assign background colors and left offsets to form a sentence */
+/* Note: left values ensure each word is horizontally displaced */
+.word.first {
+    background-color: #111;
+    color: #fff;
+    left: 0px;
+}
+.word.second {
+    background-color: #222;
+    color: #fff;
+    left: 100px;
+}
+.word.third {
+    background-color: #444;
+    color: #fff;
+    left: 200px;
+}
+.word.fourth {
+    background-color: #666;
+    color: #fff;
+    left: 300px;
+}
+.word.fifth {
+    background-color: #777;
+    color: #fff;
+    left: 400px;
+}
+
+/* ********************************************************** */
+/*            ARTICLE IMAGE & TEXT STYLING                  */
+/* ********************************************************** */
+/* Style the first letter of the first paragraph right after an image */
+.article img + p::first-letter {
+    font-size: 2em;
+    color: darkred;
+    font-weight: bold;
+}
+
+/* Alternate image float: odd articles float left, even float right */
+.article:nth-of-type(odd) img {
+    float: left;
+}
+.article:nth-of-type(even) img {
+    float: right;
+}
+
+/* Maintain image proportions with a minimum height */
+.article img {
+    min-height: 150px;
+    width: auto;
+}
+
+/* ********************************************************** */
+/*               FOOTER LINK CUSTOMIZATION                  */
+/* ********************************************************** */
+/* Footer links get an underlined blue look and a default hover cursor */
+footer a {
+    padding: 2px;
+    text-decoration: underline !important;
+    color: #4800ff !important;
+}
+footer a:hover {
+    cursor: default;
+}
+
