@@ -1,0 +1,66 @@
+/* Сброс отступов и базовые настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Стили для body с фоновым изображением */
+  body {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background: url('image.png') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Оформление контейнера */
+  .container {
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+  }
+  
+  /* Заголовок */
+  h1 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+  }
+  
+  /* Параграф */
+  p {
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+  }
+  
+  /* Контейнер для кнопок */
+  .button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+  
+  /* Кнопки-ссылки */
+  .btn {
+    text-decoration: none;
+    background-color: #4b3f36;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .btn:hover {
+    background-color: #5f4e44;
+    transform: translateY(-3px);
+  }
+  
