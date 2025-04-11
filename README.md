@@ -9,9 +9,9 @@ Ergonomic web technologies 6th semester laboratory works BSUIR
 
 ## Python разработчик
 
-- **E-mail:** example@gmail.com
-- **Phone:** +375(29) 999-99-99
-- **Telegram:** @example
+- **E-mail:** ivantakoiivan85@gmail.com
+- **Phone:** +375(29) 676-22-89
+- **Telegram:** @ivancontact24
 - **GitHub:** [github.com/mangust777](https://github.com/mangust777)
 
 ## Обо мне
