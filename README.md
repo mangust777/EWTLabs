@@ -10,7 +10,7 @@ Ergonomic web technologies 6th semester laboratory works BSUIR
 ## Python разработчик
 
 - **E-mail:** ivantakoiivan85@gmail.com
-- **Phone:** +375(29) 676-22-89
+- **Phone:** +375 (29) 676-22-89
 - **Telegram:** @ivancontact24
 - **GitHub:** [github.com/mangust777](https://github.com/mangust777)
 
