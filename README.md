@@ -3,7 +3,7 @@ Ergonomic web technologies 6th semester laboratory works BSUIR
 
 
 
-[Открыть лабораторные работы](#)
+[Открыть лабораторные работы](https://mangust777.github.io/EWTLabs/)
 
 # Долголев Иван
 
