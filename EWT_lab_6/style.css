@@ -84,7 +84,7 @@ a:hover::after {
   position: relative;
   margin: 50px auto; /* centers the ball horizontally */
   /* Increased time allocation for bounces to simulate deceleration */
-  animation: ballFall 2s ease forwards;
+  animation: ballFall 2s ease 1s infinite;
 }
 
 /* Modified keyframes for a more realistic bounce with slowing after impact */
@@ -98,7 +98,7 @@ a:hover::after {
     transform: translateY(300px) scale(1);
   }
   /* Impact: squish the ball for elastic deformation */
-  40% {
+  35% {
     transform: translateY(315px) scaleY(0.7);
   }
   /* First bounce: rebound to about half the fall height, with a stretch */
